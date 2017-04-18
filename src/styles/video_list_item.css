@@ -6,3 +6,7 @@
 .video-list-item--selected {
   background: #eeeeee;
 }
+
+.video-list-item .media-body {
+  line-height: 1.3;
+}
