@@ -1,7 +1,7 @@
 {
   "name": "react_youtube_app",
   "version": "1.0.0",
-  "description": "React Youtube App",
+  "description": "Youtube player mockup made with React based on Modern React with Redux tutorial",
   "private": true,
   "scripts": {
     "start": "webpack-dev-server",
