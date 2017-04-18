@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import ytSearch from 'youtube-api-search';
+import {debounce} from 'lodash';
 import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
@@ -17,7 +18,15 @@ class App extends Component {
       selectedVideo: null
     };
 
-    ytSearch({key: API_KEY, term: 'surfboards'}, videos => {
+    this.videoSearch('tool');
+  }
+
+  selectVideo(selectedVideo) {
+    this.setState({selectedVideo});
+  }
+
+  videoSearch(term) {
+    ytSearch({key: API_KEY, term}, videos => {
       this.setState({
         videos,
         selectedVideo: videos[0]
@@ -25,16 +34,16 @@ class App extends Component {
     });
   }
 
-  selectVideo(selectedVideo) {
-    this.setState({selectedVideo});
-  }
-
   render() {
+    const debouncedVideoSearch = debounce(term => this.videoSearch(term), 300);
+
     return (
       <div className="container">
-        <SearchBar />
+        <SearchBar onSearchTermChange={debouncedVideoSearch} />
+
         <div className="row">
           <VideoDetail video={this.state.selectedVideo} />
+
           <VideoList
             onVideoSelect={this.selectVideo.bind(this)}
             videos={this.state.videos} />
