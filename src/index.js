@@ -39,6 +39,8 @@ class App extends Component {
 
     return (
       <div className="container">
+        <h1 className="text-center mt-3 h2">React Youtube Player</h1>
+
         <SearchBar onSearchTermChange={debouncedVideoSearch} />
 
         <div className="row">
