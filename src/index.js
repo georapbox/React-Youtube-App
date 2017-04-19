@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.css';
+import './styles/main.css';
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import ytSearch from 'youtube-api-search';
@@ -5,7 +7,6 @@ import {debounce} from 'lodash';
 import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
-import 'bootstrap/dist/css/bootstrap.css';
 
 const API_KEY = 'AIzaSyC884aCDQ90pv7Ue8mAiCmmpzgvFYXbKiU';
 
@@ -18,7 +19,7 @@ class App extends Component {
       selectedVideo: null
     };
 
-    this.videoSearch('tool');
+    this.videoSearch('masha and the bear');
   }
 
   selectVideo(selectedVideo) {
@@ -27,6 +28,7 @@ class App extends Component {
 
   videoSearch(term) {
     ytSearch({key: API_KEY, term}, videos => {
+      console.log(videos);
       this.setState({
         videos,
         selectedVideo: videos[0]
@@ -38,7 +40,7 @@ class App extends Component {
     const debouncedVideoSearch = debounce(term => this.videoSearch(term), 300);
 
     return (
-      <div className="container">
+      <div className="container-fluid">
         <h1 className="text-center mt-3 h2">React Youtube Player</h1>
 
         <SearchBar onSearchTermChange={debouncedVideoSearch} />
@@ -48,7 +50,8 @@ class App extends Component {
 
           <VideoList
             onVideoSelect={this.selectVideo.bind(this)}
-            videos={this.state.videos} />
+            videos={this.state.videos}
+            selectedVideo={this.state.selectedVideo} />
         </div>
       </div>
     );

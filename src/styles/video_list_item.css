@@ -2,8 +2,7 @@
   cursor: pointer;
 }
 
-.video-list-item:hover,
-.video-list-item--selected {
+.video-list-item:hover {
   background: #eeeeee;
 }
 

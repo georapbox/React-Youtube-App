@@ -18,7 +18,7 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="row">
-        <div className="col-md-8 offset-md-2 mt-3 mb-3">
+        <div className="col-lg-6 offset-lg-3 mt-3 mb-3">
           <div className="search-bar">
             <input
               className="form-control"

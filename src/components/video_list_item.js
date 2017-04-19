@@ -4,19 +4,19 @@ import {truncate} from 'lodash';
 import '../styles/video_list_item.css';
 
 const VideoListItem = props => {
-  const {video, onVideoSelect} = props;
+  const {video, onVideoSelect, active} = props;
   const {title, description} = video.snippet;
   const imageUrl = video.snippet.thumbnails.default.url;
   const onVideoClick = selectedVideo => onVideoSelect(selectedVideo);
   const truncatedDescription = truncate(description, {length: 45});
 
   return (
-    <li className="list-group-item video-list-item media" onClick={onVideoClick.bind(null, video)}>
+    <li className={`list-group-item video-list-item media ${active ? 'bg-inverse text-white' : ''}`} onClick={onVideoClick.bind(null, video)}>
       <img className="d-flex mr-3" src={imageUrl} alt={title} />
 
       <div className="media-body">
         <h6 className="mt-0 mb-1">{title}</h6>
-        <small title={description}>{truncatedDescription}</small>
+        <span className="small" title={description}>{truncatedDescription}</span>
       </div>
     </li>
   );

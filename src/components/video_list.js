@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import VideoListItem from './video_list_item';
 
 const VideoList = props => {
-  const {videos, onVideoSelect} = props;
+  const {videos, onVideoSelect, selectedVideo} = props;
 
   if (!videos.length) {
-    return <div className="col-md-4 text-center">Loading...</div>;
+    return <div className="col-lg-5 text-center">Loading...</div>;
   }
 
   const videoItems = videos.map(video => {
@@ -14,12 +14,13 @@ const VideoList = props => {
       <VideoListItem
         key={video.etag}
         video={video}
-        onVideoSelect={onVideoSelect}/>
+        onVideoSelect={onVideoSelect}
+        active={selectedVideo.etag === video.etag} />
     );
   });
 
   return (
-    <ul className="col-md-4 list-unstyled">
+    <ul className="col-lg-5 list-unstyled">
       {videoItems}
     </ul>
   );

@@ -4,7 +4,7 @@ import '../styles/video_detail.css';
 
 const VideoDetail = ({video}) => {
   if (!video) {
-    return <div className="col-md-8 text-center">Loading...</div>;
+    return <div className="col-lg-7 text-center">Loading...</div>;
   }
 
   const {title, description} = video.snippet;
@@ -12,7 +12,7 @@ const VideoDetail = ({video}) => {
   const url = `https://www.youtube.com/embed/${videoId}`;
 
   return (
-    <div className="video-detail col-md-8">
+    <div className="video-detail col-lg-7">
       <div className="embed-responsive embed-responsive-16by9">
         <iframe className="embed-responsive-item" src={url}></iframe>
       </div>
