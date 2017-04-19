@@ -1,4 +1,4 @@
-import './styles/main222.scss';
+import './styles/main.scss';
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import ytSearch from 'youtube-api-search';
