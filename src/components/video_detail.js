@@ -1,6 +1,6 @@
+import '../styles/video_detail.scss';
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styles/video_detail.css';
 
 const VideoDetail = ({video}) => {
   if (!video) {

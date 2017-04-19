@@ -13,3 +13,9 @@ $ npm install
 ```sh
 $ npm start
 ```
+
+## Build for production
+
+```sh
+$ npm run build
+```

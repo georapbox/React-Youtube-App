@@ -1,7 +1,7 @@
+import '../styles/video_list_item.scss';
 import React from 'react';
 import PropTypes from 'prop-types';
 import {truncate} from 'lodash';
-import '../styles/video_list_item.css';
 
 const VideoListItem = props => {
   const {video, onVideoSelect, active} = props;
@@ -24,7 +24,8 @@ const VideoListItem = props => {
 
 VideoListItem.propTypes = {
   video: PropTypes.object,
-  onVideoSelect: PropTypes.func
+  onVideoSelect: PropTypes.func,
+  active: PropTypes.bool
 };
 
 export default VideoListItem;

@@ -28,7 +28,8 @@ const VideoList = props => {
 
 VideoList.propTypes = {
   videos: PropTypes.array,
-  onVideoSelect: PropTypes.func
+  onVideoSelect: PropTypes.func,
+  selectedVideo: PropTypes.object
 };
 
 export default VideoList;

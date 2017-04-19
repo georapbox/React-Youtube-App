@@ -1,5 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.css';
-import './styles/main.css';
+import './styles/main222.scss';
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import ytSearch from 'youtube-api-search';
@@ -28,7 +27,6 @@ class App extends Component {
 
   videoSearch(term) {
     ytSearch({key: API_KEY, term}, videos => {
-      console.log(videos);
       this.setState({
         videos,
         selectedVideo: videos[0]
