@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
-const outputFile = `[name].bundle.${prdEnv ? 'min' : ''}`;
+const outputFile = `[name].bundle${prdEnv ? '.min' : ''}`;
 
 const extractSass = new ExtractTextPlugin({
   filename: `${outputFile}.css`,
