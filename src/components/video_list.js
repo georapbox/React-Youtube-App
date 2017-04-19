@@ -6,7 +6,7 @@ const VideoList = props => {
   const {videos, onVideoSelect, selectedVideo} = props;
 
   if (!videos.length) {
-    return <div className="col-lg-5 text-center">Loading...</div>;
+    return <div></div>;
   }
 
   const videoItems = videos.map(video => {

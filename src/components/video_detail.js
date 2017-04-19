@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const VideoDetail = ({video}) => {
   if (!video) {
-    return <div className="col-lg-7 text-center">Loading...</div>;
+    return <div className="col-lg-12 text-center">Loading...</div>;
   }
 
   const {title, description} = video.snippet;
